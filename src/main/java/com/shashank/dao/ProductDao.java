@@ -72,13 +72,23 @@ Connection con = null;
 			pst.setString(2,product.getBrand());
 			pst.setInt(3,product.getQuantity());
 			pst.setInt(4,product.getId());
-			pst.executeQuery();	
+			pst.executeUpdate();	
 			return true;
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	public Product getProductById(int id) throws SQLException {
+		String query = "select * from products WHERE id = ?";
+		PreparedStatement pst = con.prepareStatement(query);
+		pst.setInt(1, id);
+		ResultSet rs = pst.executeQuery();
+		rs.next();
+		Product product = new Product(id,rs.getString(2),rs.getString(3),rs.getInt(4));
+		return product;
 	}
 	
 }

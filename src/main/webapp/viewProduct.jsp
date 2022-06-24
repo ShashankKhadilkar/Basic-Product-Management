@@ -34,8 +34,7 @@
 
 					<td><a href="deleteProduct/${product.getId()}"><button>Delete</button></a></td>
 					
-					<td><c:set var="id" value="${product.getId()}" scope="session" /><button onclick="document.location='editProduct.jsp'">Edit</button></a></td>
-
+					<td><a href="editProduct/${product.getId()}"><button>Edit</button></a></td>
 				</tr>
 
 			</c:forEach>
