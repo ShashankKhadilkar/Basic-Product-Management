@@ -17,11 +17,41 @@
 		product</button>
 	<br>
 	<br>
+	
+	<form action="viewProduct">
+		<button>View products</button>
+	</form>
+	<br>
+	<br>
+	
+	
+	
 
 	<c:if test="${not empty cnfMsg}">
 		${cnfMsg}
 		
-	</c:if>
+	</c:if><br>
+	<br>
+	
+	
+	
+	
+	
+	<table cellspacing="20">
+
+		<tbody>
+		
+			<c:forEach items="${productList}" var="product">				
+				<tr>
+				
+					<td>${productList.getName()}</td>
+					
+					<td><button>Delete</button></a></td>
+				</tr>
+				
+			</c:forEach>
+		</tbody>
+	</table>
 
 
 </body>

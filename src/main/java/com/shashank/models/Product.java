@@ -42,6 +42,13 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", brand=" + brand + ", quantity=" + quantity + "]";
 	}
+	public Product(int id, String name, String brand, int quantity) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.brand = brand;
+		this.quantity = quantity;
+	}
 	
 	
 	

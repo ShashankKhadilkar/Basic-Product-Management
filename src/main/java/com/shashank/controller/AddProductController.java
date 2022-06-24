@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.shashank.dao.ProductDao;
 import com.shashank.models.Product;
@@ -16,6 +17,8 @@ import com.shashank.models.Product;
 public class AddProductController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	
 		String productName = request.getParameter("productName");
 		String productBrand = request.getParameter("productBrand");
 		int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
